@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiepne.</title>
+    <title>Hiepne Photography Gallery</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.8/photoswipe.min.css">
 </head>
-<body>
+<body class="light-mode">
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle">
+        <button id="themeToggle" class="theme-btn">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -16,11 +25,10 @@
                 <h2>Hiepne</h2>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#stories" class="nav-link">Stories</a></li>
+                <li><a href="#gallery" class="nav-link active">Gallery</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#connect" class="nav-link">Connect</a></li>
+                <li><a href="#shop" class="nav-link">Shop</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -30,144 +38,31 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Moments of my life </h1>
-            <p class="hero-subtitle">Go around & take something</p>
-            <a href="#gallery" class="cta-button">More Gallery</a>
-        </div>
-        <div class="hero-image">
-            <div class="image-placeholder">
-                <i class="fas fa-camera"></i>
-                <p>my photo</p>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Hiepne</h1>
+                <p class="tagline">Capturing Life's Beautiful Moments</p>
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2 class="section-title">Photo Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-mountain"></i>
-                        <p>Landscape Photo</p>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Mountain Vista</h3>
-                        <p>Captured during golden hour</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-city"></i>
-                        <p>Urban Photo</p>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>City Lights</h3>
-                        <p>Urban exploration at night</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-tree"></i>
-                        <p>Nature Photo</p>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Forest Path</h3>
-                        <p>Peaceful morning walk</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-water"></i>
-                        <p>Water Photo</p>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Ocean Waves</h3>
-                        <p>Serenity by the sea</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-sun"></i>
-                        <p>Sunset Photo</p>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Golden Hour</h3>
-                        <p>Perfect timing</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder">
-                        <i class="fas fa-leaf"></i>
-                        <p>Macro Photo</p>
-                    </div>
-                    <div class="gallery-caption">
-                        <h3>Nature's Details</h3>
-                        <p>Close-up beauty</p>
-                    </div>
-                </div>
+    <section id="gallery" class="gallery-section">
+        <main class="gallery-container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be populated by JavaScript -->
             </div>
-        </div>
-    </section>
-
-    <!-- Stories Section -->
-    <section id="stories" class="stories">
-        <div class="container">
-            <h2 class="section-title">Photo Stories</h2>
-            <div class="stories-grid">
-                <article class="story-card">
-                    <div class="story-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-mountain"></i>
-                        </div>
-                    </div>
-                    <div class="story-content">
-                        <h3>The Mountain Adventure</h3>
-                        <p class="story-date">December 15, 2024</p>
-                        <p>Every photograph tells a story, and this one is about perseverance. Hiking up this mountain at 4 AM to catch the sunrise was one of the most challenging yet rewarding experiences...</p>
-                        <a href="#" class="read-more">Read Full Story</a>
-                    </div>
-                </article>
-                <article class="story-card">
-                    <div class="story-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-city"></i>
-                        </div>
-                    </div>
-                    <div class="story-content">
-                        <h3>Urban Exploration</h3>
-                        <p class="story-date">November 28, 2024</p>
-                        <p>The city never sleeps, and neither do the stories it holds. Walking through the streets at night revealed a different side of urban life, where light and shadow dance together...</p>
-                        <a href="#" class="read-more">Read Full Story</a>
-                    </div>
-                </article>
-                <article class="story-card">
-                    <div class="story-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-tree"></i>
-                        </div>
-                    </div>
-                    <div class="story-content">
-                        <h3>Forest Whispers</h3>
-                        <p class="story-date">October 12, 2024</p>
-                        <p>Nature has a way of speaking to those who listen. This forest path, covered in morning mist, seemed to hold secrets of centuries past...</p>
-                        <a href="#" class="read-more">Read Full Story</a>
-                    </div>
-                </article>
-            </div>
-        </div>
+        </main>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about-section">
         <div class="container">
+            <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="section-title">About Me</h2>
                     <p>Hi, I'm Truong Viet Hiep, a passionate photographer who believes that every moment is worth capturing.</p>
                     <p>My journey in photography began with a love for the art of visual storytelling. I lived in Tokyo for 3 years and fell in love with the visuals there. I bought my first camera, a Fujifilm XT30 with a 35mm f1.4 lens, to capture those moments. Now I'm back in Vietnam and continue my passion.</p>
                     <p>I specialize in beach, streetlife, food and portrait photography. And I want to share more about Vietnam through my photos.</p>
@@ -196,12 +91,12 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Connect Section -->
+    <section id="connect" class="connect-section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
+            <h2 class="section-title">Connect</h2>
+            <div class="connect-content">
+                <div class="connect-info">
                     <h3>Let's Connect</h3>
                     <p>I'm always interested in hearing about new photography opportunities, collaborations, or just sharing stories about our shared passion for capturing life's beautiful moments.</p>
                     <div class="contact-methods">
@@ -213,13 +108,9 @@
                             <i class="fab fa-instagram"></i>
                             <span>@hiepne.e</span>
                         </div>
-                        <!--<div class="contact-method">
-                            <i class="fab fa-twitter"></i>
-                            <span>@hiepne.e</span>
-                        </div> -->
                         <div class="contact-method">
                             <i class="fab fa-facebook"></i>
-                            <span>@</span>
+                            <span>@hiepne</span>
                         </div>
                     </div>
                 </div>
@@ -239,39 +130,75 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Shop Section -->
+    <section id="shop" class="shop-section">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Hiepne</h3>
-                    <p>.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#stories">Stories</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Me</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+            <h2 class="section-title">Shop</h2>
+            <div class="shop-content">
+                <div class="shop-intro">
+                    <h3>Coming Soon</h3>
+                    <p>I'm working on bringing you high-quality prints and digital downloads of my best work. Stay tuned for updates!</p>
+                    <div class="shop-features">
+                        <div class="feature">
+                            <i class="fas fa-print"></i>
+                            <h4>Fine Art Prints</h4>
+                            <p>High-quality prints on premium paper</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-download"></i>
+                            <h4>Digital Downloads</h4>
+                            <p>High-resolution digital files</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-calendar"></i>
+                            <h4>Photo Sessions</h4>
+                            <p>Book a professional photo session</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; Hiepne. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- PhotoSwipe Container -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
 
+    <!-- PhotoSwipe JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.8/photoswipe.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.3.8/photoswipe-lightbox.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 
