@@ -1,234 +1,82 @@
-# Hiepne Photography Gallery
+# Truong Viet Hiep – Portfolio
 
-A modern, responsive photography gallery website inspired by Peter McKinnon's portfolio. Built with pure HTML, CSS, and vanilla JavaScript.
+This is my personal GitHub Pages portfolio inspired by McKay Mower's design.  
+It showcases my AI research (LuX-ViT), academic projects, and photography interests.
 
-## 🌟 Features
+## Sections
+- **Home** - Hero section with introduction and smooth scroll navigation
+- **About** - Personal background, AI research interests, and skills
+- **Projects** - LuX-ViT Vision Transformer project and E-commerce application
+- **Gallery** - Photography showcase with lightbox functionality
+- **Contact** - Contact information and form
 
-### Gallery Layout
-- **32 High-Quality Images**: Extensive gallery with diverse photography styles
-- **Masonry-style Grid**: Images are displayed in a tight, responsive grid layout with no spacing or borders
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **CSS Grid & Columns**: Uses modern CSS for optimal performance and layout
+## Features
+- Responsive design optimized for all devices
+- Smooth scrolling navigation with active link highlighting
+- Modern gray-blue-black color scheme with sky blue accents
+- Scroll animations and fade-in effects
+- Mobile-friendly hamburger menu
+- Gallery lightbox for photography viewing
+- Contact form with validation (frontend only)
+- Performance optimized with lazy loading
 
-### Navigation & Sections
-- **Fixed Navigation**: Smooth scrolling navigation with active link highlighting
-- **Mobile Menu**: Hamburger menu for mobile devices
-- **About Section**: Personal introduction and photography journey
-- **Connect Section**: Contact form and social media links
-- **Shop Section**: Coming soon section for future e-commerce features
+## Technology Stack
+- **HTML5** - Semantic markup with accessibility features
+- **CSS3** - Modern styling with CSS Grid, Flexbox, and animations
+- **JavaScript (ES6+)** - Interactive functionality and smooth scrolling
+- **Font Awesome** - Icons for social links and UI elements
+- **Google Fonts** - Inter font family for clean typography
 
-### Cloudinary Integration
-- **Optimized Image Loading**: Uses Cloudinary's transformation API for optimized images
-- **Multiple Resolutions**: 
-  - Gallery thumbnails: `w_800` (800px width)
-  - Lightbox images: `w_2000` (2000px width)
-- **Automatic Format & Quality**: Uses `f_auto` and `q_auto` for best performance
-
-### PhotoSwipe Lightbox
-- **Fullscreen View**: Click any image to open in a beautiful lightbox overlay
-- **Navigation**: Swipe, arrow keys, or click to navigate between images
-- **High-Resolution Loading**: Large images only load when lightbox opens
-- **Anti-Copy Protection**: Right-click disabled in lightbox
-
-### Dark/Light Mode Toggle
-- **Theme Persistence**: User preference saved in localStorage
-- **Smooth Transitions**: Elegant theme switching with CSS transitions
-- **Accessible**: Keyboard navigation and focus indicators
-
-### Anti-Copy Measures
-- **Right-Click Disabled**: Context menu disabled across the entire site
-- **Image Dragging Prevented**: Images cannot be dragged to desktop
-- **Text Selection Disabled**: Prevents easy copying of content
-- **Keyboard Shortcuts Blocked**: Prevents Ctrl+S, Ctrl+U, F12
-- **Invisible Overlays**: Additional protection layers on images
-
-## 🚀 Quick Start
-
-### 1. Setup Cloudinary
-1. Create a Cloudinary account at [cloudinary.com](https://cloudinary.com)
-2. Get your cloud name from the dashboard
-3. Upload your images to Cloudinary in a `gallery` folder
-
-### 2. Configure the Gallery
-Edit `script.js` and update the `GALLERY_CONFIG`:
-
-```javascript
-const GALLERY_CONFIG = {
-    cloudName: 'your-cloud-name', // Replace with your Cloudinary cloud name
-    images: [
-        {
-            id: 1,
-            title: 'Your Photo Title',
-            description: 'Photo description',
-            filename: 'gallery/your-photo.jpg' // Path in Cloudinary
-        },
-        // Add more images...
-    ]
-};
+## Project Structure
+```
+/
+├── index.html
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── script.js
+│   └── img/
+│       ├── hero.jpg (placeholder)
+│       ├── avatar.jpg (placeholder)
+│       └── gallery1-6.jpg (placeholders)
+└── README.md
 ```
 
-### 3. Customize Images
-Replace the sample images with your own:
-- Upload photos to Cloudinary
-- Update the `images` array in `script.js`
-- Use descriptive titles and descriptions
+## Setup Instructions
+1. Clone or download this repository
+2. Add your images to the `assets/img/` directory:
+   - `hero.jpg` - Background image for hero section
+   - `avatar.jpg` - Your profile photo
+   - `gallery1.jpg` through `gallery6.jpg` - Photography images
+3. Update contact information in `index.html`:
+   - Replace placeholder GitHub, LinkedIn, and Instagram URLs
+   - Update email address if needed
+4. Deploy to GitHub Pages or any static hosting service
 
-### 4. Deploy
-- Upload all files to your web server
-- Ensure HTTPS is enabled for security features
-- Test on different devices and browsers
+## Customization
+- **Colors**: Modify CSS variables in `:root` selector
+- **Content**: Update text content in `index.html`
+- **Images**: Replace placeholder images with your own
+- **Projects**: Add more project cards in the projects section
+- **Skills**: Replace the skills placeholder with actual skills
 
-## 📁 File Structure
+## Browser Support
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-```
-Viethiep49.github.io/
-├── index.html          # Main HTML file with navigation and sections
-├── styles.css          # CSS styles and responsive design
-├── script.js           # JavaScript functionality
-└── README.md          # This documentation
-```
+## Performance Features
+- Optimized images with lazy loading
+- Smooth scroll behavior
+- Efficient CSS animations
+- Minimal JavaScript footprint
+- Fast loading with CDN resources
 
-## 🎨 Customization
-
-### Colors & Themes
-The website uses CSS custom properties for easy theming. Key variables in `styles.css`:
-
-```css
-/* Light Mode Colors */
-body.light-mode {
-    background-color: #ffffff;
-    color: #1a1a1a;
-}
-
-/* Dark Mode Colors */
-body.dark-mode {
-    background-color: #0a0a0a;
-    color: #ffffff;
-}
-```
-
-### Gallery Layout
-Adjust the grid layout in `styles.css`:
-
-```css
-.gallery-grid {
-    columns: 4; /* Number of columns on desktop */
-    column-gap: 0;
-}
-
-@media (max-width: 1200px) {
-    .gallery-grid { columns: 3; }
-}
-@media (max-width: 768px) {
-    .gallery-grid { columns: 2; }
-}
-@media (max-width: 480px) {
-    .gallery-grid { columns: 1; }
-}
-```
-
-### Navigation
-Customize the navigation menu in `index.html`:
-
-```html
-<ul class="nav-menu">
-    <li><a href="#gallery" class="nav-link active">Gallery</a></li>
-    <li><a href="#about" class="nav-link">About</a></li>
-    <li><a href="#connect" class="nav-link">Connect</a></li>
-    <li><a href="#shop" class="nav-link">Shop</a></li>
-</ul>
-```
-
-### PhotoSwipe Configuration
-Customize the lightbox behavior in `script.js`:
-
-```javascript
-const options = {
-    bgOpacity: 0.9,
-    showHideOpacity: true,
-    history: false,
-    closeOnVerticalDrag: true,
-    // ... more options
-};
-```
-
-## 🔧 Technical Details
-
-### Performance Optimizations
-- **Lazy Loading**: Images load only when needed
-- **Intersection Observer**: Efficient scroll-based loading
-- **Optimized Images**: Cloudinary handles compression and formats
-- **Minimal Dependencies**: Only PhotoSwipe CDN for lightbox
-
-### Security Features
-- **Anti-Copy Measures**: Multiple layers of protection
-- **Right-Click Disabled**: Prevents easy image saving
-- **Keyboard Shortcuts Blocked**: Prevents developer tools access
-- **Drag Prevention**: Images cannot be dragged to desktop
-
-### Browser Support
-- **Modern Browsers**: Chrome, Firefox, Safari, Edge
-- **Mobile Support**: iOS Safari, Chrome Mobile
-- **Progressive Enhancement**: Works without JavaScript (basic gallery)
-
-## 📱 Responsive Breakpoints
-
-- **Desktop**: 1200px+ (4 columns)
-- **Tablet**: 768px - 1199px (3 columns)
-- **Mobile**: 480px - 767px (2 columns)
-- **Small Mobile**: <480px (1 column)
-
-## 🎯 SEO & Accessibility
-
-- **Semantic HTML**: Proper heading structure and landmarks
-- **Alt Text**: All images have descriptive alt attributes
-- **Keyboard Navigation**: Full keyboard accessibility
-- **Focus Indicators**: Clear focus states for all interactive elements
-- **Screen Reader Support**: Proper ARIA labels and roles
-
-## 🔒 Security Considerations
-
-The anti-copy measures are designed to deter casual copying but cannot prevent all methods of image capture. For maximum protection:
-
-1. **Watermark Images**: Add subtle watermarks to your photos
-2. **Low Resolution**: Use lower resolution images for web display
-3. **Legal Protection**: Consider copyright notices and terms of use
-4. **Regular Monitoring**: Check for unauthorized use of your images
-
-## 🐛 Troubleshooting
-
-### Images Not Loading
-- Check Cloudinary cloud name in `script.js`
-- Verify image paths in Cloudinary
-- Ensure images are publicly accessible
-
-### Lightbox Not Working
-- Check PhotoSwipe CDN links in `index.html`
-- Verify JavaScript console for errors
-- Ensure images have proper alt attributes
-
-### Theme Not Saving
-- Check localStorage is enabled in browser
-- Verify theme toggle button exists in HTML
-- Check for JavaScript errors in console
-
-### Navigation Issues
-- Ensure all section IDs match navigation links
-- Check for JavaScript errors in console
-- Verify smooth scrolling is supported by browser
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 🤝 Contributing
-
-Feel free to submit issues and enhancement requests!
-
-## 📞 Support
-
-For questions or support, please check the troubleshooting section above or create an issue in the repository.
+Built with HTML, CSS, and JavaScript.  
+Hosted on GitHub Pages.
 
 ---
-
-**Built with ❤️ for photographers who want to showcase their work beautifully and securely.**
+© 2025 Truong Viet Hiep. All rights reserved.
